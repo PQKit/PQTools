@@ -504,6 +504,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				OTHER_SWIFT_FLAGS = "-D DEBUGSWIFT";
 				PRODUCT_BUNDLE_IDENTIFIER = code.pq..PQTools;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -531,6 +532,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				OTHER_SWIFT_FLAGS = "-D DEBUGSWIFT";
 				PRODUCT_BUNDLE_IDENTIFIER = code.pq..PQTools;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;

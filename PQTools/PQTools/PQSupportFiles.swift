@@ -69,7 +69,7 @@ public func PQisiPhoneX() -> Bool {
 }
 
 public func PQPrint(_ items: Any...,  function:String = #function,file : String = #file, lineNumber : Int = #line){
-    #if DEBUG
+    #if DEBUGSWIFT
     //获取文件名
     let fileName = (file as NSString).lastPathComponent
     let interval = TimeZone.current.secondsFromGMT(for: Date())
@@ -82,7 +82,7 @@ public func PQPrint(_ items: Any...,  function:String = #function,file : String 
 
 public func PQLog<T>(message : T, file : String = #file, lineNumber : Int = #line) {
     
-    #if DEBUG
+    #if DEBUGSWIFT
     
     let fileName = (file as NSString).lastPathComponent
     print("[\(fileName):line:\(lineNumber)]- \(message)")
