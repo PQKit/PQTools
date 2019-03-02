@@ -11,7 +11,7 @@ public extension UIViewController {
     ///   - storyboard: storyboard
     ///   - identifier: identifier description
     /// - Returns: controller optional
-    class func loadSB(storyboard: String,
+    class func pq_loadSB(storyboard: String,
                       identifier: String?) -> UIViewController? {
         if identifier == nil {
             return UIStoryboard(name: storyboard, bundle: nil).instantiateInitialViewController()
@@ -23,7 +23,7 @@ public extension UIViewController {
     /// load controller from xib
     ///
     /// - Returns: controller optional
-    class func loadXIB() -> UIViewController?{
+    class func pq_loadXIB() -> UIViewController?{
         if let nibName = NSStringFromClass(self).components(separatedBy: ".").last{
             return UIViewController(nibName: nibName, bundle: nil)
         }
@@ -37,7 +37,7 @@ public extension UIViewController {
     ///   - tintColor: default is white
     ///   - barTintColor: default is white
     ///   - textColor: default is white
-    func navTintColor(_ tintColor: UIColor = .white,
+    public func pq_navTintColor(_ tintColor: UIColor = .white,
                       barTintColor: UIColor = .white,
                       textColor: UIColor = .white){
         self.navigationController?.navigationBar.tintColor = tintColor
@@ -48,12 +48,12 @@ public extension UIViewController {
     
     
     /// remove listen keyboard keyboardWillChangeFrameNotification
-    func removeKeyboardLayout() {
+    public func pq_removeKeyboardLayout() {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
     }
     
     /// listen keyboard keyboardWillChangeFrameNotification
-    func keyboardLayout(){
+    public func pq_keyboardLayout(){
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardFrameWiiChange(_:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
     }
     
@@ -71,7 +71,7 @@ public extension UIViewController {
             })
         }else{
             //得到最大的y轴坐标
-            let bottom = frame.maxY + (PQisiPhoneX() ? 98 : 10)
+            let bottom = frame.maxY + (PQIsiPhoneX ? 98 : 10)
             
             if bottom > keyboardFrame.minY {//表示会被挡住
                 UIView.animate(withDuration: 0.25, animations: {[weak self] in

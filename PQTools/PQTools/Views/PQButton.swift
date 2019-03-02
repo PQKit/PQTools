@@ -21,13 +21,13 @@ public class PQButton: UIButton {
     // MARK: 公开
     public typealias PQButtonBlock = (_ button: PQButton) -> Void
     /// 文字和图片的间距
-    public var spacing: CGFloat = 0
+    open var spacing: CGFloat = 0
     /// 最短长按时间
-    public var minLongPressDuration: TimeInterval = 0.5
+    open var minLongPressDuration: TimeInterval = 0.5
     /// 类型
-    public var type: PQButtonLayoutType = .none
+    open var type: PQButtonLayoutType = .none
     
-    public var animationType: PQButtonAnimationType = .none
+    open var animationType: PQButtonAnimationType = .none
     
     /// disable background color
     public var disableColor: UIColor?{
@@ -49,24 +49,12 @@ public class PQButton: UIButton {
     }
     
     // MARK: 私有
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         setupAnimation()
     }
     
-    public convenience init (_ type: PQButtonLayoutType = .none){
-        self.init(type: type, animationType: .none)
-    }
     
-    public convenience init (_ animationType: PQButtonAnimationType = .none){
-        self.init(type: .none, animationType: animationType)
-    }
-    
-    public convenience init(type: PQButtonLayoutType = .none, animationType: PQButtonAnimationType = .none){
-        self.init(frame: .zero)
-        self.type = type
-        self.animationType = animationType
-    }
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -247,5 +235,44 @@ extension UIImage {
     @objc private func touchUpInsideEvent(_ button: PQButton){
         responseCount = 0
         callback()
+    }
+}
+
+
+// MARK: - convenience init
+public extension PQButton {
+    public convenience init(frame: CGRect, title: String?, titleColor: UIColor? = nil, font: UIFont? = nil, backgroundImage: String? = nil) {
+        self.init(frame: frame)
+        self.setTitle(title, for: .normal)
+        self.setTitleColor(titleColor, for: .normal)
+        if let font = font {
+            self.titleLabel?.font = font
+        }
+        
+        if let backgroundImage = backgroundImage,
+            !backgroundImage.isEmpty {
+            self.setBackgroundImage(UIImage(named: backgroundImage), for: .normal)
+        }
+    }
+    
+    public convenience init(image: String) {
+        self.init(frame: .zero)
+        if !image.isEmpty {
+            self.setImage(UIImage(named: image), for: .normal)
+        }
+    }
+    
+    public convenience init (_ type: PQButtonLayoutType = .none){
+        self.init(type: type, animationType: .none)
+    }
+    
+    public convenience init (_ animationType: PQButtonAnimationType = .none){
+        self.init(type: .none, animationType: animationType)
+    }
+    
+    public convenience init(type: PQButtonLayoutType = .none, animationType: PQButtonAnimationType = .none){
+        self.init(frame: .zero)
+        self.type = type
+        self.animationType = animationType
     }
 }

@@ -12,15 +12,16 @@ public extension  UILabel {
     ///   - fontSize: font size default is 17
     ///   - textAlignment: textAlignment default is left
     ///   - text: text default is nil
-    convenience init(frame: CGRect = .zero,
+    class func pq_init(frame: CGRect = .zero,
                      textColor: UIColor = .black,
                      fontSize: CGFloat = 17,
                      textAlignment: NSTextAlignment = .left,
-                     text: String? = nil) {
-        self.init(frame: frame)
-        self.textColor = textColor
-        self.font = UIFont.systemFont(ofSize: fontSize)
-        self.textAlignment = textAlignment
-        self.text = text
+                     text: String? = nil) -> UILabel {
+        let label = UILabel(frame: frame)
+        label.textColor = textColor
+        label.font = UIFont.systemFont(ofSize:  fontSize)
+        label.textAlignment = textAlignment
+        label.text = text
+        return label
     }
 }

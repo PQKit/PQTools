@@ -122,21 +122,7 @@ public extension PQColor where WrapperType == UIColor {
         return (red: red, green: green, blue: blue, alpha: alpha)
     }
     
-    /// h s b a [0.0 - 1.0]
-    func hsba(h: Double, s: Double, b: Double, a: Double) -> UIColor {
-        return UIColor(hue: CGFloat(h), saturation: CGFloat(s), brightness: CGFloat(b), alpha: CGFloat(a))
-    }
     
-    
-    /// 16进制转化颜色
-    ///
-    /// - Parameters:
-    ///   - value: 数据
-    ///   - alpha: 透明度
-    /// - Returns: color
-    func hexColor(_ value : Int64, alpha : CGFloat = 1) -> UIColor {
-        return UIColor(red: CGFloat((((value & 0xFF0000) >> 16))) / 255.0, green: CGFloat((((value & 0xFF00) >> 8))) / 255.0, blue: CGFloat(((value & 0xFF))) / 255.0, alpha: alpha)
-    }
 }
 
 public extension UIColor {
@@ -153,6 +139,37 @@ public extension UIColor {
     class func pq_RandomRGBColor() -> UIColor{
         return UIColor(red: CGFloat(arc4random() % 255) / 255.0, green: CGFloat(arc4random() % 255) / 255.0, blue: CGFloat(arc4random() % 255) / 255.0, alpha: CGFloat(arc4random() % 255) / 255.0)
     }
+    
+    /// h s b a [0.0 - 1.0]
+    class func pq_hsba(h: Double, s: Double, b: Double, a: Double) -> UIColor {
+        return UIColor(hue: CGFloat(h), saturation: CGFloat(s), brightness: CGFloat(b), alpha: CGFloat(a))
+    }
+    
+    
+    /// 16进制转化颜色
+    ///
+    /// - Parameters:
+    ///   - value: 数据
+    ///   - alpha: 透明度
+    /// - Returns: color
+    class func pq_hexColor(_ value : Int64, alpha : CGFloat = 1) -> UIColor {
+        return UIColor(red: CGFloat((((value & 0xFF0000) >> 16))) / 255.0, green: CGFloat((((value & 0xFF00) >> 8))) / 255.0, blue: CGFloat(((value & 0xFF))) / 255.0, alpha: alpha)
+    }
+    
+    
+    /// 创建RGB
+    ///
+    /// - Parameters:
+    ///   - red: red
+    ///   - green: green
+    ///   - blue: blue
+    ///   - alpha: alpah
+    /// - Returns: color
+    class func pq_color(red: UInt8, green: UInt8, blue: UInt8, alpha: CGFloat = 1) -> UIColor {
+        return UIColor(red: CGFloat(red)/255.0, green: CGFloat(green)/255.0, blue: CGFloat(blue)/255.0, alpha: alpha)
+    }
+    
+    
 }
 
 

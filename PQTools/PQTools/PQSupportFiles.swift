@@ -26,26 +26,35 @@ public var PQScreenBouds: CGRect {
     return UIScreen.main.bounds
 }
 
-public func PQiPhoneXBottom() -> CGFloat{
-    if let window = UIApplication.shared.keyWindow {
-        if window.frame.size == CGSize(width: 375, height: 812){
-            return -20
-        }
-    }
-    return -0
-}
 
-public func PQisIpad() -> Bool {
+
+
+public var PQIsIpad: Bool {
     return (UI_USER_INTERFACE_IDIOM() == .pad)
 }
 
-public func PQisiPhone() -> Bool {
+public var PQIsiPhone: Bool {
     return (UI_USER_INTERFACE_IDIOM() == .phone)
 }
 
-public func PQisiPhoneX() -> Bool {
-    let bounds = UIScreen.main.bounds
-    return (bounds.width == 375) && (bounds.height == 812)
+public var PQIsTV: Bool {
+    return (UI_USER_INTERFACE_IDIOM() == .tv)
+}
+
+public var PQIsCarPlay: Bool {
+    return (UI_USER_INTERFACE_IDIOM() == .tv)
+}
+
+public var PQIsiPhoneX: Bool {
+    let size = UIScreen.main.bounds.size
+    return size == CGSize(width: 812, height: 375) || size == CGSize(width: 375, height: 812)
+}
+
+public var PQNavHeight: CGFloat {
+    return PQIsiPhoneX ? 88 : 64
+}
+public var PQTabHeight: CGFloat {
+    return PQIsiPhoneX ? 83 : 49
 }
 
 @discardableResult public func PQPrintData(_ item: Data?) -> Bool {

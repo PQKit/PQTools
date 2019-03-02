@@ -3,13 +3,14 @@
 import UIKit
 
 public extension UITableView{
-    convenience init(frame: CGRect = .zero,
+    class func pq_init(frame: CGRect = .zero,
                      delegate: UITableViewDelegate? = nil,
                      dataSource: UITableViewDataSource? = nil,
-                     rowHeight: CGFloat = 44){
-        self.init(frame: frame)
-        self.delegate = delegate
-        self.dataSource = dataSource
-        self.rowHeight = rowHeight
+                     rowHeight: CGFloat = 44) -> UITableView{
+        let tbView = UITableView(frame: frame)
+        tbView.delegate = delegate
+        tbView.dataSource = dataSource
+        tbView.rowHeight = rowHeight
+        return tbView
     }
 }

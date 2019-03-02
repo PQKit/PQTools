@@ -12,13 +12,14 @@ public extension UIStackView{
     ///   - axis: NSLayoutConstraint.Axis
     ///   - alignment: UIStackView.Alignment
     ///   - distribution: UIStackView.Distribution
-    convenience init(frame: CGRect = .zero,
+    class func pq_init(frame: CGRect = .zero,
                      axis: NSLayoutConstraint.Axis,
                      alignment: UIStackView.Alignment,
-                     distribution: UIStackView.Distribution){
-        self.init(frame: frame)
-        self.axis = axis
-        self.alignment = alignment
-        self.distribution = distribution
+                     distribution: UIStackView.Distribution) -> UIStackView {
+        let stackView = UIStackView(frame: frame)
+        stackView.axis = axis
+        stackView.alignment = alignment
+        stackView.distribution = distribution
+        return stackView
     }
 }
