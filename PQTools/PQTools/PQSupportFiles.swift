@@ -46,8 +46,11 @@ public var PQIsCarPlay: Bool {
 }
 
 public var PQIsiPhoneX: Bool {
-    let size = UIScreen.main.bounds.size
-    return size == CGSize(width: 812, height: 375) || size == CGSize(width: 375, height: 812)
+    var bottomInsets: CGFloat = 0
+    if #available(iOS 11.0, *) {
+         bottomInsets = UIApplication.shared.delegate?.window??.safeAreaInsets.bottom ?? 0
+    }
+    return bottomInsets > 0
 }
 
 public var PQNavHeight: CGFloat {
