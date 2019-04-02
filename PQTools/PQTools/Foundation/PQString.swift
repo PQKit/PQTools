@@ -373,6 +373,10 @@ public extension PQString where WrapperType == String {
         free(result)
         return String(format: hash as String)
     }
+    
+    var base64: String? {
+        return pq.data(using: .utf8)?.base64EncodedString()
+    }
 }
 
 // MARK: -  property
