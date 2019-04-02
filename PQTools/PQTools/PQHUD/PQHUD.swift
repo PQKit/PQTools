@@ -50,7 +50,7 @@ public class PQHUD: NSObject {
     
     public typealias PushCallbackClosure = (Error?) -> Void
     
-    static let shared: PQHUD = PQHUD()
+    public static let shared: PQHUD = PQHUD()
     public static var dismissTimeInterval: TimeInterval = 0.75
     
     #if false
