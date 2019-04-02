@@ -80,7 +80,7 @@ public extension PQView where WrapperType == UIView {
     /// - parameter at: 位置
     ///
     /// - returns: 颜色
-    public func pickColor(at position: CGPoint) -> UIColor? {
+    func pickColor(at position: CGPoint) -> UIColor? {
         
         // 用来存放目标像素值
         var pixel = [UInt8](repeatElement(0, count: 4))

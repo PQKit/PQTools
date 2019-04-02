@@ -4,7 +4,7 @@ import UIKit
 
 public extension UIAlertAction {
     static var isCancelKey = "UIAlertAction.isCancelKey"
-    public var isCancel: Bool {
+    var isCancel: Bool {
         get {
             guard let value = objc_getAssociatedObject(self, &UIAlertAction.isCancelKey) as? Bool else {
                 objc_setAssociatedObject(self, &UIAlertAction.isCancelKey, false, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)

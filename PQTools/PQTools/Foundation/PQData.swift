@@ -63,7 +63,7 @@ public extension PQData where WrapperType == Data {
         return pq.subdata(in: range)
     }
     
-    public var bytes: Array<UInt8> {
+    var bytes: Array<UInt8> {
         return Array(pq)
     }
     

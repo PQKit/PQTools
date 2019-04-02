@@ -203,8 +203,8 @@ public extension PQString where WrapperType == String {
     ///   - end: end char
     /// - Returns: string optional
     func sub(start: Character, end: Character) -> String? {
-        guard var sIdx = pq.index(of: start),
-            let eIdx = pq.index(of: end),
+        guard var sIdx = pq.firstIndex(of: start),
+            let eIdx = pq.firstIndex(of: end),
             sIdx < eIdx  else {
                 return nil
         }
@@ -306,7 +306,7 @@ public extension PQString where WrapperType == String {
     ///
     /// - Returns: data
     func data() -> Data? {
-        return Data(bytes: bytes)
+        return Data( bytes)
     }
     
     
@@ -355,12 +355,12 @@ public extension PQString where WrapperType == String {
     
     
     /// bytes
-    public var bytes: Array<UInt8> {
+    var bytes: Array<UInt8> {
         return pq.data(using: String.Encoding.utf8, allowLossyConversion: true)?.pq.bytes ?? Array(pq.utf8)
     }
     
     /// md5
-    public var md5: String {
+    var md5: String {
         let str = pq.cString(using: String.Encoding.utf8)
         let strLen = CUnsignedInt(pq.lengthOfBytes(using: String.Encoding.utf8))
         let digestLen = Int(CC_MD5_DIGEST_LENGTH)
@@ -378,22 +378,22 @@ public extension PQString where WrapperType == String {
 // MARK: -  property
 public extension String {
     /// Bundle.main.infoDictionary
-    public static var pq_infoDictionary: [String:Any] {
+    static var pq_infoDictionary: [String:Any] {
         return Bundle.main.infoDictionary ?? [:]
     }
     
     /// app version
-    public static var pq_appVersion: String? {
+    static var pq_appVersion: String? {
         return pq_infoDictionary["CFBundleShortVersionString"] as? String
     }
     
     /// app build version
-    public static var pq_appBuildVersion: String? {
+    static var pq_appBuildVersion: String? {
         return pq_infoDictionary["CFBundleVersion"] as? String
     }
     
     /// app static name
-    public static var pq_appName: String? {
+    static var pq_appName: String? {
         return pq_infoDictionary["CFBundleName"] as? String
     }
 }

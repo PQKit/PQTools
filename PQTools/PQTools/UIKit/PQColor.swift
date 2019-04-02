@@ -18,7 +18,7 @@ public struct PQColor<T>: PQProtocol{
 
 
 public extension UIColor {
-    public var pq: PQColor<UIColor> {
+    var pq: PQColor<UIColor> {
         return PQColor(pq: self)
     }
 }

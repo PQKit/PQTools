@@ -45,7 +45,7 @@
 		60959FD2222678FB005C5B05 /* PQAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60959FB7222678FA005C5B05 /* PQAlertController.swift */; };
 		60959FD3222678FB005C5B05 /* PQView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60959FB9222678FA005C5B05 /* PQView.swift */; };
 		60959FD4222678FB005C5B05 /* PQImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60959FBA222678FA005C5B05 /* PQImage.swift */; };
-		60959FD5222678FB005C5B05 /* QFUIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60959FBB222678FA005C5B05 /* QFUIImageView.swift */; };
+		60959FD5222678FB005C5B05 /* PQUIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60959FBB222678FA005C5B05 /* PQUIImageView.swift */; };
 		60959FD6222678FB005C5B05 /* PQColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60959FBC222678FA005C5B05 /* PQColor.swift */; };
 		60959FD7222678FB005C5B05 /* PQNavgationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60959FBD222678FA005C5B05 /* PQNavgationItem.swift */; };
 		60959FD8222678FB005C5B05 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60959FBE222678FB005C5B05 /* UIViewController.swift */; };
@@ -103,7 +103,7 @@
 		60959FB7222678FA005C5B05 /* PQAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PQAlertController.swift; sourceTree = "<group>"; };
 		60959FB9222678FA005C5B05 /* PQView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PQView.swift; sourceTree = "<group>"; };
 		60959FBA222678FA005C5B05 /* PQImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PQImage.swift; sourceTree = "<group>"; };
-		60959FBB222678FA005C5B05 /* QFUIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QFUIImageView.swift; sourceTree = "<group>"; };
+		60959FBB222678FA005C5B05 /* PQUIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PQUIImageView.swift; sourceTree = "<group>"; };
 		60959FBC222678FA005C5B05 /* PQColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PQColor.swift; sourceTree = "<group>"; };
 		60959FBD222678FA005C5B05 /* PQNavgationItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PQNavgationItem.swift; sourceTree = "<group>"; };
 		60959FBE222678FB005C5B05 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
@@ -260,7 +260,7 @@
 			children = (
 				60959FB9222678FA005C5B05 /* PQView.swift */,
 				60959FBA222678FA005C5B05 /* PQImage.swift */,
-				60959FBB222678FA005C5B05 /* QFUIImageView.swift */,
+				60959FBB222678FA005C5B05 /* PQUIImageView.swift */,
 				60959FBC222678FA005C5B05 /* PQColor.swift */,
 				60959FBD222678FA005C5B05 /* PQNavgationItem.swift */,
 			);
@@ -329,7 +329,7 @@
 		60959F7C222678BB005C5B05 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = pgq;
 				TargetAttributes = {
 					60959F84222678BB005C5B05 = {
@@ -347,6 +347,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 60959F7B222678BB005C5B05;
 			productRefGroup = 60959F86222678BB005C5B05 /* Products */;
@@ -410,7 +411,7 @@
 				60959FC5222678FB005C5B05 /* UICollectionView+PQ.swift in Sources */,
 				60959FC7222678FB005C5B05 /* UITableView+PQ.swift in Sources */,
 				6052379A2250B7CB009D4901 /* SVIndefiniteAnimatedView.m in Sources */,
-				60959FD5222678FB005C5B05 /* QFUIImageView.swift in Sources */,
+				60959FD5222678FB005C5B05 /* PQUIImageView.swift in Sources */,
 				605237912250B7CB009D4901 /* PQHUD.swift in Sources */,
 				605237992250B7CB009D4901 /* SVProgressHUD.m in Sources */,
 				60959FD2222678FB005C5B05 /* PQAlertController.swift in Sources */,
@@ -548,6 +549,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -577,7 +579,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -604,7 +606,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = code.pq..PQTools;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

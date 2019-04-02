@@ -241,7 +241,7 @@ extension UIImage {
 
 // MARK: - convenience init
 public extension PQButton {
-    public convenience init(frame: CGRect, title: String?, titleColor: UIColor? = nil, font: UIFont? = nil, backgroundImage: String? = nil) {
+    convenience init(frame: CGRect, title: String?, titleColor: UIColor? = nil, font: UIFont? = nil, backgroundImage: String? = nil) {
         self.init(frame: frame)
         self.setTitle(title, for: .normal)
         self.setTitleColor(titleColor, for: .normal)
@@ -255,22 +255,22 @@ public extension PQButton {
         }
     }
     
-    public convenience init(image: String) {
+    convenience init(image: String) {
         self.init(frame: .zero)
         if !image.isEmpty {
             self.setImage(UIImage(named: image), for: .normal)
         }
     }
     
-    public convenience init (_ type: PQButtonLayoutType = .none){
+    convenience init (_ type: PQButtonLayoutType = .none){
         self.init(type: type, animationType: .none)
     }
     
-    public convenience init (_ animationType: PQButtonAnimationType = .none){
+    convenience init (_ animationType: PQButtonAnimationType = .none){
         self.init(type: .none, animationType: animationType)
     }
     
-    public convenience init(type: PQButtonLayoutType = .none, animationType: PQButtonAnimationType = .none){
+    convenience init(type: PQButtonLayoutType = .none, animationType: PQButtonAnimationType = .none){
         self.init(frame: .zero)
         self.type = type
         self.animationType = animationType
