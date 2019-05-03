@@ -37,6 +37,22 @@ public extension PQView where WrapperType == UIView {
         set{ pq.frame.origin.x = x }
     }
     
+    var left: CGFloat {
+        return x
+    }
+    
+    var top: CGFloat {
+        return y
+    }
+    
+    var right: CGFloat {
+        return pq.frame.maxX
+    }
+    
+    var bottom: CGFloat {
+        return pq.frame.maxY
+    }
+    
     var y: CGFloat {
         get{ return pq.frame.origin.y }
         set{ pq.frame.origin.x = y }
