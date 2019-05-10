@@ -241,7 +241,7 @@ extension UIImage {
 
 // MARK: - convenience init
 public extension PQButton {
-    convenience init(frame: CGRect, title: String?, titleColor: UIColor? = nil, font: UIFont? = nil, backgroundImage: String? = nil) {
+    convenience init(frame: CGRect, title: String?, titleColor: UIColor? = nil, font: UIFont? = nil, backgroundImage: String? = nil, image: String? = nil) {
         self.init(frame: frame)
         self.setTitle(title, for: .normal)
         self.setTitleColor(titleColor, for: .normal)
@@ -252,6 +252,11 @@ public extension PQButton {
         if let backgroundImage = backgroundImage,
             !backgroundImage.isEmpty {
             self.setBackgroundImage(UIImage(named: backgroundImage), for: .normal)
+        }
+        
+        if let image = image,
+            !image.isEmpty {
+            self.setImage(UIImage(named: image), for: .normal)
         }
     }
     
