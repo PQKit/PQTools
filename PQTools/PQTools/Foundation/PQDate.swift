@@ -2,7 +2,7 @@
 
 import Foundation
 
-public struct PQDate<T>: PQProtocol{
+public struct PQDate<T>: PQType{
     //internal 默认的访问级别，可以不写
     public let pq: T
     public init(pq: T){

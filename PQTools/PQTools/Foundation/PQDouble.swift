@@ -1,7 +1,7 @@
 
 import Foundation
 
-public struct PQDouble<T>: PQProtocol {
+public struct PQDouble<T>: PQType {
     public let pq: T
     public init(pq: T){
         self.pq = pq

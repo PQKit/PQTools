@@ -8,7 +8,7 @@
 
 import UIKit
 
-public struct PQColor<T>: PQProtocol{
+public struct PQColor<T>: PQType{
     //internal 默认的访问级别，可以不写
     public let pq: T
     public init(pq: T){

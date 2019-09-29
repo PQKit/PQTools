@@ -9,7 +9,7 @@
 
 import Foundation
 
-public protocol PQProtocol {
+public protocol PQType {
     associatedtype WrapperType
     var pq: WrapperType { get }
 }

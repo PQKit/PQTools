@@ -4,7 +4,7 @@ import Foundation
 import CommonCrypto
 
 
-public struct PQString<T>: PQProtocol{
+public struct PQString<T>: PQType{
     //internal 默认的访问级别，可以不写
     public let pq: T
     public init(pq: T){

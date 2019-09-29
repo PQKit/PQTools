@@ -3,7 +3,7 @@
 import Foundation
 import CoreLocation
 
-public struct PQLocation<T>: PQProtocol {
+public struct PQLocation<T>: PQType {
     public let pq: T
     public init(pq: T){
         self.pq = pq

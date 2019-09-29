@@ -8,7 +8,7 @@
 
 import UIKit
 
-public struct PQView<T>: PQProtocol {
+public struct PQView<T>: PQType {
     public let pq: T
     public init(pq: T){
         self.pq = pq

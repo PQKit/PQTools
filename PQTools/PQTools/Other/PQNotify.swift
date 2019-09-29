@@ -72,9 +72,6 @@ public enum PQSystemSupportNotification {
 public enum PQNotify: String {
     case none = "none"
     
-    /// userinfo ["successed": Bool]
-    case regiterGateway = "regiterGateway"
-    
     public var name: Notification.Name {
         return NSNotification.Name(self.rawValue)
     }

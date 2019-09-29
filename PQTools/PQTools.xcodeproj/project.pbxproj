@@ -47,7 +47,7 @@
 		60959FCD222678FB005C5B05 /* QFCLLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60959FB1222678FA005C5B05 /* QFCLLocation.swift */; };
 		60959FCE222678FB005C5B05 /* PQDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60959FB2222678FA005C5B05 /* PQDouble.swift */; };
 		60959FCF222678FB005C5B05 /* PQString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60959FB3222678FA005C5B05 /* PQString.swift */; };
-		60959FD0222678FB005C5B05 /* PQProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60959FB4222678FA005C5B05 /* PQProtocol.swift */; };
+		60959FD0222678FB005C5B05 /* PQType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60959FB4222678FA005C5B05 /* PQType.swift */; };
 		60959FD1222678FB005C5B05 /* PQUpgradeVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60959FB6222678FA005C5B05 /* PQUpgradeVersion.swift */; };
 		60959FD2222678FB005C5B05 /* PQAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60959FB7222678FA005C5B05 /* PQAlertController.swift */; };
 		60959FD3222678FB005C5B05 /* PQView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60959FB9222678FA005C5B05 /* PQView.swift */; };
@@ -133,7 +133,7 @@
 		60959FB1222678FA005C5B05 /* QFCLLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QFCLLocation.swift; sourceTree = "<group>"; };
 		60959FB2222678FA005C5B05 /* PQDouble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PQDouble.swift; sourceTree = "<group>"; };
 		60959FB3222678FA005C5B05 /* PQString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PQString.swift; sourceTree = "<group>"; };
-		60959FB4222678FA005C5B05 /* PQProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PQProtocol.swift; sourceTree = "<group>"; };
+		60959FB4222678FA005C5B05 /* PQType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PQType.swift; sourceTree = "<group>"; };
 		60959FB6222678FA005C5B05 /* PQUpgradeVersion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PQUpgradeVersion.swift; sourceTree = "<group>"; };
 		60959FB7222678FA005C5B05 /* PQAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PQAlertController.swift; sourceTree = "<group>"; };
 		60959FB9222678FA005C5B05 /* PQView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PQView.swift; sourceTree = "<group>"; };
@@ -240,7 +240,7 @@
 				60959FA7222678FA005C5B05 /* Extensions */,
 				60959FAE222678FA005C5B05 /* Foundation */,
 				60959FA3222678FA005C5B05 /* Other */,
-				60959FB4222678FA005C5B05 /* PQProtocol.swift */,
+				60959FB4222678FA005C5B05 /* PQType.swift */,
 				60959F9F222678FA005C5B05 /* PQSupportFiles.swift */,
 				60959FB8222678FA005C5B05 /* UIKit */,
 				60959FBE222678FB005C5B05 /* UIViewController.swift */,
@@ -504,7 +504,7 @@
 				60959FC4222678FB005C5B05 /* PQAnimate.swift in Sources */,
 				60959FD1222678FB005C5B05 /* PQUpgradeVersion.swift in Sources */,
 				60959FC9222678FB005C5B05 /* UISlider+PQ.swift in Sources */,
-				60959FD0222678FB005C5B05 /* PQProtocol.swift in Sources */,
+				60959FD0222678FB005C5B05 /* PQType.swift in Sources */,
 				60959FC6222678FB005C5B05 /* UIViewController+PQ.swift in Sources */,
 				60959FCF222678FB005C5B05 /* PQString.swift in Sources */,
 				60959FD8222678FB005C5B05 /* UIViewController.swift in Sources */,

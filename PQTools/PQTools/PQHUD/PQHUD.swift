@@ -111,8 +111,15 @@ public class PQHUD: NSObject {
         push(UIApplication.openSettingsURLString, completion: completion)
     }
     
+    
+    /// 设置最大消失时间为30s
+    /// 设置遮罩模式为 .black
+    /// 动画为线性
+    /// 字号为15
+    ///
+    /// - Parameter block: 默认配置
     public class func defaultSetHUD(_ block: (() -> ())?){
-        SVProgressHUD.setMinimumDismissTimeInterval(50)
+        SVProgressHUD.setMaximumDismissTimeInterval(30)
         //设置遮罩模式 不允许用户操作N
         SVProgressHUD.setDefaultMaskType(.black)
         SVProgressHUD.setAnimationCurve(.linear)
@@ -134,6 +141,7 @@ public class PQHUD: NSObject {
 
 public extension PQHUD  {
     
+    /// 返回时候在设置显示中
     var isVisible: Bool {
         return SVProgressHUD.isVisible()
     }

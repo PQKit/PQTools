@@ -2,7 +2,7 @@
 
 import UIKit
 
-public struct PQImage<T>: PQProtocol {
+public struct PQImage<T>: PQType {
     public let pq: T
     public init(pq: T){
         self.pq = pq
