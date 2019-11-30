@@ -167,6 +167,24 @@ public extension PQImage where WrapperType == UIImage {
         
         return image
     }
+    
+    /// 高斯模糊图片，值越高，模糊程度越大
+    /// - Parameter blur: 模糊效果
+    func blur(_ blur: CGFloat) -> UIImage? {
+        //获取原始图片
+        let inputImage =  CIImage(image: self)
+        //使用高斯模糊滤镜
+        guard let filter = CIFilter(name: "CIGaussianBlur") else { return nil }
+        filter.setValue(inputImage, forKey:kCIInputImageKey)
+        //设置模糊半径值（越大越模糊）
+        filter.setValue(blur, forKey: kCIInputRadiusKey)
+        guard let outputCIImage = filter.outputImage else { return nil }
+        let rect = CGRect(origin: .zero, size: size)
+        let context = CIContext(options: nil)
+        guard let cgImage = context.createCGImage(outputCIImage, from: rect) else { return nil }
+        //显示生成的模糊图片
+        return UIImage(cgImage: cgImage)
+    }
 }
 
 public extension UIImage {
