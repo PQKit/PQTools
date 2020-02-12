@@ -3,22 +3,7 @@
 import Foundation
 import CommonCrypto
 
-
-public struct PQString<T>: PQType{
-    //internal 默认的访问级别，可以不写
-    public let pq: T
-    public init(pq: T){
-        self.pq = pq
-    }
-}
-
-extension String {
-    public var pq: PQString<String> {
-        return PQString(pq: self)
-    }
-}
-
-public extension PQString where WrapperType == String {
+public extension Reactive where Base == String {
     
     /// 国际化
     /// NSLocalizedString(str, comment: str)
@@ -356,7 +341,10 @@ public extension PQString where WrapperType == String {
     
     /// bytes
     var bytes: Array<UInt8> {
-        return pq.data(using: String.Encoding.utf8, allowLossyConversion: true)?.pq.bytes ?? Array(pq.utf8)
+        guard let data = pq.data(using: .utf8, allowLossyConversion: true) else {
+            return Array(pq.utf8)
+        }
+        return Array(data)
     }
     
     /// md5

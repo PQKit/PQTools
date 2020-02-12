@@ -8,53 +8,40 @@
 
 import UIKit
 
-public struct PQView<T>: PQType {
-    public let pq: T
-    public init(pq: T){
-        self.pq = pq
-    }
-}
-
-extension UIView {
-    public var pq: PQView<UIView> {
-        return PQView(pq: self)
-    }
-}
-
-public extension PQView where WrapperType == UIView {
+public extension Reactive where Base == UIView {
     var width: CGFloat {
         get{ return pq.frame.width }
-        set{ pq.frame.size.width = width }
+        set{ pq.frame.size.width = newValue }
     }
     
     var height: CGFloat{
         get{ return pq.frame.height }
-        set{ pq.frame.size.height = height }
+        set{ pq.frame.size.height = newValue }
     }
     
     var x: CGFloat {
         get{ return pq.frame.origin.x }
-        set{ pq.frame.origin.x = x }
+        set{ pq.frame.origin.x = newValue }
     }
     
     var y: CGFloat {
         get{ return pq.frame.origin.y }
-        set{ pq.frame.origin.x = y }
+        set{ pq.frame.origin.x = newValue }
     }
     
     var origin: CGPoint {
         get{ return pq.frame.origin }
-        set{ pq.frame.origin = origin }
+        set{ pq.frame.origin = newValue }
     }
     
     var size: CGSize {
         get{ return pq.frame.size }
-        set{ pq.frame.size = size }
+        set{ pq.frame.size = newValue }
     }
     
     var center: CGPoint {
         get{ return CGPoint(x: width * 0.5, y: height * 0.5) }
-        set{ pq.center = center }
+        set{ pq.center = newValue }
     }
     
     

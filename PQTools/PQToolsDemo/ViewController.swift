@@ -26,16 +26,29 @@ class ViewController: UIViewController {
             deStr.removeAll(where: { $0 == "1" })
             print("解码", deStr)
         }
+        
+        let btn = PQButton(frame: CGRect(x: 10, y: 50, width: 100, height: 44))
+        btn.setTitle("选中了", for: .selected)
+        let image = UIImage.pq_drawCircle(CGSize(width: 40, height: 40), color: .green)
+        btn.setImage(image, for: .selected)
+        btn.buttonClick { (button) in
+            button.isSelected =  !button.isSelected
+        }
+        btn.backgroundColor = .systemOrange
+        view.addSubview(btn)
+        
+        
     }
     
     var index: Int = 0
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if index >= PQPushType.allCases.count {
-            index = 0;
-        }
-        
-        PQHUD.push(PQPushType.allCases[index])
-        index += 1
+        print(#function, #line)
+//        if index >= PQPushType.allCases.count {
+//            index = 0;
+//        }
+//
+//        PQHUD.push(PQPushType.allCases[index])
+//        index += 1
     }
 
 
