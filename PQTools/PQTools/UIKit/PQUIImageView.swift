@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension PQView where WrapperType == UIImageView  {
+extension Reactive where Base == UIImageView  {
     func color(point: CGPoint) -> UIColor? {
         return pq.image?.pq.getPixelColor(pos: point)
     }

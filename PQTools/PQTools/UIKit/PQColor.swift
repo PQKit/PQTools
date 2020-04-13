@@ -8,22 +8,7 @@
 
 import UIKit
 
-public struct PQColor<T>: PQType{
-    //internal 默认的访问级别，可以不写
-    public let pq: T
-    public init(pq: T){
-        self.pq = pq
-    }
-}
-
-
-public extension UIColor {
-    var pq: PQColor<UIColor> {
-        return PQColor(pq: self)
-    }
-}
-
-public extension PQColor where WrapperType == UIColor {
+public extension Reactive where Base == UIColor {
     func red() -> Float {
         var red: CGFloat = 0
         pq.getRed(&red, green: nil, blue: nil, alpha: nil)

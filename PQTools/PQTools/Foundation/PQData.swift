@@ -1,26 +1,11 @@
-
-
 import Foundation
 
-public struct PQData<T>: PQType {
-    public let pq: T
-    public init(pq: T){
-        self.pq = pq
-    }
-}
-
-extension Data {
-    public var pq: PQData<Data> {
-        return PQData(pq: self)
-    }
-}
-
-public extension PQData where WrapperType == Data {
+public extension Reactive where Base == Data {
     /// 把data转为Uint8数组
     /// to UInt8 array
     ///
     /// - Returns: 数组
-    func toUInt8() -> [UInt8]{
+    func toUInt8() -> [UInt8] {
         var byteArray = [UInt8](repeating: 0, count: pq.count)
         pq.copyBytes(to: &byteArray, count: pq.count)
         return byteArray

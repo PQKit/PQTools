@@ -84,12 +84,25 @@ public class PQButton: UIButton {
             titleInsets = UIEdgeInsets(top: -(imageSize.height + titleSize.height + spacing),
                                        left: -(imageSize.width), bottom: 0, right: 0)
             imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: -titleSize.width)
+            
+            let topSpacing = frame.height - (imageSize.height + titleSize.height + spacing)
+            titleInsets.top = abs(topSpacing * 0.5)
+            imageInsets.top = titleSize.height + spacing + abs(topSpacing * 0.5)
+            
+            self.contentVerticalAlignment = .top
         case .bottomText:
             titleInsets = UIEdgeInsets(top: (imageSize.height + titleSize.height + spacing),
                                        left: -(imageSize.width), bottom: 0, right: 0)
             imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: -titleSize.width)
+            
+            let topSpacing = frame.height - (imageSize.height + titleSize.height + spacing)
+            imageInsets.top = abs(topSpacing * 0.5)
+            titleInsets.top = imageSize.height + spacing + abs(topSpacing * 0.5)
+            
+            self.contentVerticalAlignment = .top
+            
         default:
-            if pq.width < imageSize.width + titleSize.width + spacing {
+            if self.frame.width < imageSize.width + titleSize.width + spacing {
                 self.frame.size.width = imageSize.width + titleSize.width + spacing * 2
             }
             titleInsets = UIEdgeInsets(top: 0, left: spacing*2, bottom: 0, right: 0)
@@ -152,7 +165,7 @@ public class PQButton: UIButton {
     }
 }
 
-extension UIImage {
+private extension UIImage {
     func imageSize(scale: CGFloat) -> UIImage? {
         let newSize = CGSize(width: size.width * scale, height: size.height * scale)
         UIGraphicsBeginImageContextWithOptions(newSize, false, UIScreen.main.scale)

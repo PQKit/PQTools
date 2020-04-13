@@ -1,19 +1,4 @@
-
-
 import UIKit
-
-public struct PQImage<T>: PQType {
-    public let pq: T
-    public init(pq: T){
-        self.pq = pq
-    }
-}
-
-extension UIImage {
-    public var pq: PQImage<UIImage> {
-        return PQImage(pq: self)
-    }
-}
 
 public struct DrawBackItem {
     /// default .white
@@ -51,7 +36,7 @@ public struct DrawBackItem {
     
 }
 
-public extension PQImage where WrapperType == UIImage {
+public extension Reactive where Base == UIImage {
     
     
     /// 获取图片中点的颜色

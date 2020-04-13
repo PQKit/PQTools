@@ -1,21 +1,4 @@
-
-
 import Foundation
-
-public struct PQDate<T>: PQType{
-    //internal 默认的访问级别，可以不写
-    public let pq: T
-    public init(pq: T){
-        self.pq = pq
-    }
-}
-
-extension Date {
-    public var pq: PQDate<Date> {
-        return PQDate(pq: self)
-    }
-}
-
 
 public enum DateFormat: String {
     case g = "G"//      公元时代，例如AD公元
@@ -47,7 +30,7 @@ public enum DateFormat: String {
 }
 
 
-public extension PQDate where WrapperType == Date {
+public extension Reactive where Base == Date {
     
     /// 获取当前日期 根据格式
     /// get date string for format string
