@@ -9,9 +9,38 @@
 
 import Foundation
 
+public struct PQ<Base> {
+    public let base: Base
+    
+    public init(_ base: Base) {
+        self.base = base
+    }
+}
+
 public protocol PQType {
     associatedtype WrapperType
-    var pq: WrapperType { get }
+    static var pq: PQ<WrapperType>.Type { get set }
+    var pq: WrapperType { get set }
 }
+
+extension PQType {
+    public static var rx: PQ<Self>.Type {
+        get {
+            return PQ<Self>.self
+        }
+        set { }
+    }
+    
+    public var rx: PQ<Self> {
+        get {
+            return PQ(self)
+        }
+        set { }
+    }
+}
+
+extension NSObject: PQType { }
+
+
 
 

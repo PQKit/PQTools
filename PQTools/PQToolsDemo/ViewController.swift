@@ -13,29 +13,43 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        PQPushType.allCases.forEach { type in
-    
-//            let str = .reduce("", { $0 + String($1) + "1" })
-//            let baseStr = str.pq.base64!
-//            print(str, baseStr)
-            
-            let data = type.rawValue.data(using: .utf8)
-            
-            let base64Data = Data(base64Encoded: data!)
-            var deStr = String(data: base64Data!, encoding: .utf8)!
-            deStr.removeAll(where: { $0 == "1" })
-            print("解码", deStr)
+//        PQPushType.allCases.forEach { type in
+//
+////            let str = .reduce("", { $0 + String($1) + "1" })
+////            let baseStr = str.pq.base64!
+////            print(str, baseStr)
+//
+//            let data = type.rawValue.data(using: .utf8)
+//
+//            let base64Data = Data(base64Encoded: data!)
+//            var deStr = String(data: base64Data!, encoding: .utf8)!
+//            deStr.removeAll(where: { $0 == "1" })
+//            print("解码", deStr)
+//        }
+        
+        
+        let btn = PQButton(frame: .zero, title: "哈哈")
+        view.addSubview(btn)
+        btn.snp.makeConstraints { (make) in
+            make.left.top.equalToSuperview()
+        }
+        
+    }
+    @IBOutlet weak var imageView1: UIImageView!
+    @IBOutlet weak var imageView2: UIImageView! {
+        didSet {
+            imageView2.image = imageView2.image?.pq.blur(6)
         }
     }
     
     var index: Int = 0
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if index >= PQPushType.allCases.count {
-            index = 0;
-        }
-        
-        PQHUD.push(PQPushType.allCases[index])
-        index += 1
+//        if index >= PQPushType.allCases.count {
+//            index = 0;
+//        }
+//        
+//        PQHUD.push(PQPushType.allCases[index])
+//        index += 1
     }
 
 
