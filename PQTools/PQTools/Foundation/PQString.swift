@@ -81,7 +81,7 @@ public extension Reactive where Base == String {
     /// - Returns: cache path
     func cacheDir() -> String{
         let path = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.cachesDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).last!  as NSString
-        return path.appendingPathComponent(pq as String)
+        return path.appendingPathComponent(pq)
     }
     
     /// 把字符串拼接到 文档目录下
@@ -91,7 +91,7 @@ public extension Reactive where Base == String {
     func documentDir() -> String
     {
         let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last!  as NSString
-        return path.appendingPathComponent((pq as NSString).lastPathComponent)
+        return path.appendingPathComponent(pq)
     }
     
     /// 把字符串拼接到 缓存目录下
@@ -101,7 +101,7 @@ public extension Reactive where Base == String {
     func tempDir() -> String
     {
         let path = NSTemporaryDirectory() as NSString
-        return path.appendingPathComponent((pq as NSString).lastPathComponent)
+        return path.appendingPathComponent(pq)
     }
     
     /// 正则
